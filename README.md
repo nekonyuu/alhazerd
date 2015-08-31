@@ -17,6 +17,8 @@ The frontend is not yet started, for the backend, if you really want to (you sho
 pip install -r requirements.txt
 # installing development dependencies
 pip install -r requirements-devel.txt
-# running the app
+# running the app (dev mode)
 cd backend && python backend
+# or (prod mode)
+cd backend && ENV=production gunicorn -w 4 -b 127.0.0.1:5555 application:app
 ```
