@@ -7,3 +7,4 @@ flask-classy==0.6.10
 pyyaml==3.11
 requests==2.7.0
 scales==1.0.9
+passlib==1.6.5
