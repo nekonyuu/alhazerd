@@ -1,3 +1,8 @@
+# user management
+class DuplicateUser(Exception):
+    pass
+
+# media processing
 class MediaProcessingError(Exception):
     pass
 

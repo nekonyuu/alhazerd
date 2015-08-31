@@ -1,5 +1,8 @@
+import passlib
 import pymongo
 from greplin import scales
+
+from application.model import User, UserRole
 
 
 class UsersBackend(object):
@@ -30,6 +33,21 @@ class UsersBackend(object):
             tz_aware=True
         )
         self._db = self._connection[config.mongo.user_collection]
+
+    def register(self, username, email, password):
+        """
+        Register the new user
+        :param username:
+        :type username: str
+        :param email:
+        :type email: str
+        :param password:
+        :type password: str
+        :return:
+        :rtype: None
+        :raise DuplicateUser: the username or email already exists
+        """
+        raise NotImplementedError()
 
     def authenticate(self, username, password):
         """
