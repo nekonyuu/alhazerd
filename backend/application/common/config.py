@@ -22,6 +22,10 @@ DEFAULT_CONFIG = {
         "enable": False,
         "host": "127.0.0.1",
         "port": 2003
+    },
+    "storage": {
+        "thumbnails_path": "./data/thumbnails",
+        "medias_path": "./data/medias"
     }
 }
 

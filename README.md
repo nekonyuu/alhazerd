@@ -18,5 +18,5 @@ pip install -r requirements.txt
 # installing development dependencies
 pip install -r requirements-devel.txt
 # running the app
-python backend
+cd backend && python backend
 ```
