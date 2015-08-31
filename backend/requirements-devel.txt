@@ -1,0 +1,5 @@
+profilehooks==1.8.0
+pytest==2.7.2
+pytest-coverage==0.0
+coverage==3.7.1
+xenon==0.3.3

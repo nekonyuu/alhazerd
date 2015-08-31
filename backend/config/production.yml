@@ -1,0 +1,18 @@
+---
+listen_port: 5555
+debug: false
+
+mongo:
+  uri: "mongodb://127.0.0.1:27017/?w=1"
+  db_name: alhazerd
+  media_collection: "medias"
+  user_collection: "users"
+  replicaset_name: "rs0"
+  max_pool_size: 100
+  wait_queue_multiple: 10
+  wait_queue_timeout_ms: null
+
+graphite:
+  enable: true
+  host: 127.0.0.1
+  port: 2003
