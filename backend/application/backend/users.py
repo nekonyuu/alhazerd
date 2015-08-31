@@ -3,6 +3,7 @@ import pymongo
 from greplin import scales
 
 from application.model import User, UserRole
+from application.common.exceptions import DuplicateUser
 
 
 class UsersBackend(object):
@@ -32,7 +33,8 @@ class UsersBackend(object):
             waitQueueTimeoutMS=config.mongo.wait_queue_timeout_ms,
             tz_aware=True
         )
-        self._db = self._connection[config.mongo.user_collection]
+        self._db = self._connection[self._db_name]
+        self._users = self._db[config.mongo.user_collection]
 
     def register(self, username, email, password):
         """

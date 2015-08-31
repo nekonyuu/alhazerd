@@ -1,6 +1,8 @@
 import pymongo
 from greplin import scales
 
+from application.model import Media
+
 
 class MediasBackend(object):
     """
@@ -29,7 +31,8 @@ class MediasBackend(object):
             waitQueueTimeoutMS=config.mongo.wait_queue_timeout_ms,
             tz_aware=True
         )
-        self._db = self._connection[config.mongo.media_collection]
+        self._db = self._connection[self._db_name]
+        self._medias = self._db[config.mongo.media_collection]
 
     def fetch_medias(self, user_id, start=0, max_size=20):
         """
