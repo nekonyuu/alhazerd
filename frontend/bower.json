@@ -1,0 +1,29 @@
+{
+  "name": "alhazerd-frontend",
+  "version": "0.0.1",
+  "authors": [
+    "Jonathan Raffre <nk@nyuu.eu>"
+  ],
+  "description": "Alhazerd frontend app",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.0",
+    "angular": "~1.4.5",
+    "angular-mocks": "~1.4.5",
+    "angular-route": "~1.4.5",
+    "angular-sanitize": "~1.4.5",
+    "lodash": "~3.10.1",
+    "modernizr": "~2.8.3"
+  }
+}
