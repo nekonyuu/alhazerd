@@ -18,8 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "Materialize": "materialize#~0.97.0",
     "angular": "~1.4.5",
+    "angular-material": "~0.10.1",
     "angular-mocks": "~1.4.5",
     "angular-route": "~1.4.5",
     "angular-sanitize": "~1.4.5",
