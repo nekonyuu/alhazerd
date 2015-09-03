@@ -1,61 +1,68 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js"> <!--<![endif]-->
 <head>
+    <title>Alhazerd: media hosting</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"/>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="./app.css"/>
+
+    <script type="text/javascript" src="./bower_components/modernizr/modernizr.js"></script>
 </head>
 
-<body>
+<body ng-app="alhazerd" layout="row">
 
-<div ng-controller="AppCtrl" layout="column" style="height:500px;">
-    <section layout="row" flex>
-        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
-                    md-is-locked-open="$mdMedia('gt-md')">
-            <md-toolbar class="md-theme-indigo">
-                <h1 class="md-toolbar-tools">Sidenav Left</h1>
-            </md-toolbar>
-            <md-content layout-padding ng-controller="LeftCtrl">
-                <md-button ng-click="close()" class="md-primary" hide-gt-md>
-                    Close Sidenav Left
-                </md-button>
-                <p hide-md show-gt-md>
-                    This sidenav is locked open on your device. To go back to the default behavior,
-                    narrow your display.
-                </p>
-            </md-content>
-        </md-sidenav>
-        <md-content flex layout-padding>
-            <div layout="column" layout-fill layout-align="top center">
-                <p>
-                    The left sidenav will 'lock open' on a medium (>=960px wide) device.
-                </p>
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-sm')">
 
-                <p>
-                    The right sidenav will focus on a specific child element.
-                </p>
+    <md-toolbar>
+        <h1>Alhazerd</h1>
+        <h2>Nifty media hosting</h2>
+    </md-toolbar>
 
-                <div>
-                    <md-button ng-click="toggleLeft()"
-                               class="md-primary" hide-gt-md>
-                        Toggle left
-                    </md-button>
-                </div>
-                <div>
-                    <md-button ng-click="toggleRight()"
-                               class="md-primary">
-                        Toggle right
-                    </md-button>
-                </div>
-            </div>
-            <div flex></div>
-        </md-content>
-    </section>
-</div>
+    <md-list>
+        <md-list-item ng-repeat="it in ul.users">
+            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+                {{it.name}}
+            </md-button>
+        </md-list-item>
+    </md-list>
 
+</md-sidenav>
+
+<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2" ng-view></div>
+
+<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="./bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
 <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
-<script type="text/javascript" src="./js/controllers.js"></script>
+
+<script type="text/javascript" src="./app.js"></script>
+
+<script type="text/javascript" src="./home/home.js"></script>
+<script type="text/javascript" src="./home/homeService.js"></script>
+<script type="text/javascript" src="./home/homeController.js"></script>
+
+<script type="text/javascript" src="./profile/profile.js"></script>
+<script type="text/javascript" src="./profile/profileService.js"></script>
+<script type="text/javascript" src="./profile/profileController.js"></script>
+
+<script type="text/javascript" src="./gallery/gallery.js"></script>
+<script type="text/javascript" src="./gallery/galleryService.js"></script>
+<script type="text/javascript" src="./gallery/galleryController.js"></script>
 </body>
 </html>
