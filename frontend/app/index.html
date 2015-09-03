@@ -8,7 +8,7 @@
 <!--[if gt IE 8]><!-->
 <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
-    <title>Alhazerd: media hosting</title>
+    <title>Alhazerd: nifty media hosting</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -16,7 +16,7 @@
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
-    <link rel="stylesheet" href="./app.css"/>
+    <link rel="stylesheet" href="./assets/app.css"/>
 
     <script type="text/javascript" src="./bower_components/modernizr/modernizr.js"></script>
 </head>
@@ -25,18 +25,47 @@
 
 <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left"
-            md-is-locked-open="$mdMedia('gt-sm')">
+            md-is-locked-open="$mdMedia('gt-sm')" flex>
 
-    <md-toolbar>
-        <h1>Alhazerd</h1>
-        <h2>Nifty media hosting</h2>
+    <md-toolbar class="md-whiteframe-z1 md-tall" layout="row">
+        <div flex="33">
+            <user-avatar class="avatar"></user-avatar>
+        </div>
+        <div flex="67">
+            <h1>username</h1>
+
+            <h2>myemail@foo.bar</h2>
+        </div>
     </md-toolbar>
 
     <md-list>
-        <md-list-item ng-repeat="it in ul.users">
-            <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-                <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-                {{it.name}}
+        <md-list-item>
+            <md-button href="#/home">
+                <ng-md-icon icon="home" style="fill: #000000"></ng-md-icon>
+                Home
+            </md-button>
+        </md-list-item>
+
+        <md-list-item>
+            <md-button href="#/gallery" class="inset">
+                <ng-md-icon icon="image" style="fill: #000000"></ng-md-icon>
+                Gallery
+            </md-button>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-subheader>Profile</md-subheader>
+        <md-list-item>
+            <md-button href="#/profile" class="inset">
+                <ng-md-icon icon="edit" style="fill: #000000"></ng-md-icon>
+                Manage
+            </md-button>
+        </md-list-item>
+        <md-list-item>
+            <md-button href="#/logout" class="inset">
+                <ng-md-icon icon="exit_to_app" style="fill: #000000"></ng-md-icon>
+                Logout
             </md-button>
         </md-list-item>
     </md-list>
@@ -50,6 +79,7 @@
 <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
 <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
 <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+<script type="text/javascript" src="./bower_components/angular-material-icons/angular-material-icons.js"></script>
 
 <script type="text/javascript" src="./app.js"></script>
 

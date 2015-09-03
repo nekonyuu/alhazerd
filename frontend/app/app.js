@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('alhazerd', [
     'ngMaterial',
+    'ngMdIcons',
     'ngRoute',
     'alhazerd.home',
     'alhazerd.profile',
@@ -11,8 +12,14 @@ angular.module('alhazerd', [
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/home'});
     }]).
-    config(function($mdThemingProvider){
-        $mdThemingProvider.theme('default')
+    config(function ($mdThemingProvider, $mdIconProvider) {
+        $mdIconProvider
+            .icon("login", "./assets/svg/login.svg", 24);
+
+        $mdThemingProvider
+            .theme('default')
             .primaryPalette('blue-grey')
-            .accentPalette('cyan');
+            .accentPalette('cyan')
+            .warnPalette('red')
+            .backgroundPalette('grey');
     });
