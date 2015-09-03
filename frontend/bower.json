@@ -20,11 +20,14 @@
   "dependencies": {
     "angular": "~1.4.5",
     "angular-material": "~0.10.1",
-    "angular-material-icons": "~0.5.0",
+    "angular-material-icons": "master",
     "angular-mocks": "~1.4.5",
     "angular-route": "~1.4.5",
     "angular-sanitize": "~1.4.5",
     "lodash": "~3.10.1",
     "modernizr": "~2.8.3"
+  },
+  "resolutions": {
+    "angular-material-icons": "master"
   }
 }
