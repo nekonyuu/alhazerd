@@ -1,7 +1,7 @@
 html, body {
     font-family: 'Roboto', sans-serif;
-    font-size:14px;
-    height:100%;
+    font-size: 14px;
+    height: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -41,67 +41,26 @@ md-list .md-button.selected {
     color: #03a9f4;
 }
 
-md-sidenav  md-list {
+md-sidenav md-list {
     padding: 0px 0px 8px 0px;
 }
 
-
 /* Primary content area */
 
-#content {
-    overflow: hidden;
+ul.gallery {
 }
 
-#content  {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 5px;
+ul.gallery li {
+    list-style-type: none;
+    float: left;
+    margin: 5px;
+    display: table-cell;
+    line-height: 150px;
+    padding: 0;
 }
 
-#content .md-button.contact {
-    background-color: transparent;
-    border: none;
-    width: 48px;
-    height: 48px;
-    margin: 8px auto 16px 0;
-    position: absolute;
-    top: 10px;
-    right: 40px;
-}
-
-#content md-icon.avatar {
-    margin-top: 10px;
-}
-
-#content .md-button.contact > md-icon {
-    fill:black;
-    width:36px;
-    height:36px;
-}
-
-md-button.menuBtn > md-icon {
-    fill:white;
-    width:24px;
-    height:24px;
-}
-
-#content .md-button.contact:active > md-icon {
-    background-color: #dadada;
-    border-radius: 75%;
-    padding:4px;
-    transition: all 100ms ease-out 30ms;
-}
-
-#content img {
-    display: block;
-    height: auto;
-    max-width: 500px;
-}
-
-/* Utils */
-
-.content-wrapper {
-    position: relative;
+ul.gallery li > img {
+    vertical-align: middle;
 }
 
 /* Typography support coming in 0.8.0 */
@@ -127,19 +86,18 @@ md-toolbar h2 {
     overflow: hidden;
     margin: 0px;
     vertical-align: middle;
-    zoom:0.70;
+    zoom: 0.70;
     transform: translateZ(0);
     -webkit-transform: scale(0.70);
-    -moz-transform:scale(0.70);
+    -moz-transform: scale(0.70);
 }
 
-
-md-bottom-sheet  md-icon {
-    margin-right:20px;
+md-bottom-sheet md-icon {
+    margin-right: 20px;
 }
 
 span.name {
     font-weight: bold;
-    font-size:1.1em;
-    padding-left:5px;
+    font-size: 1.1em;
+    padding-left: 5px;
 }

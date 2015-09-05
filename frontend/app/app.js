@@ -7,15 +7,12 @@ angular.module('alhazerd', [
     'ngRoute',
     'alhazerd.home',
     'alhazerd.profile',
-    'alhazerd.gallery'
+    'alhazerd.collections'
 ]).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/home'});
     }]).
     config(function ($mdThemingProvider, $mdIconProvider) {
-        $mdIconProvider
-            .icon("login", "./assets/svg/login.svg", 24);
-
         $mdThemingProvider
             .theme('default')
             .primaryPalette('blue-grey')

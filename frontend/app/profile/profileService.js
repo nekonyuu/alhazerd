@@ -2,6 +2,8 @@
 
 angular
     .module('alhazerd.profile')
-    .service('profileService', [function () {
+    .service('profileService', ['$q', ProfileService]);
 
-    }]);
+function ProfileService($q) {
+
+}
