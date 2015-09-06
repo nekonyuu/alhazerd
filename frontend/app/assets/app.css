@@ -22,10 +22,12 @@ md-toolbar div {
 
 md-toolbar h1 {
     margin: auto;
+    color: white;
 }
 
 md-toolbar h2 {
     margin: auto;
+    color: white;
 }
 
 /* Sidenav area */
