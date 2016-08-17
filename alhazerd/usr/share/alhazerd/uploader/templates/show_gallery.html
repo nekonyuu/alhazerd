@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div id="gallery" style="width: 100%">
+        {% for p in galleryList %}
+        <div class="thumbnail">
+            <a href="/picture/{{ p.id }}/"><img src="{{ MEDIA_URL }}{{ p.thumbnailPath }}" /></a><br />
+            <a href="/picture/{{ p.id }}/delete/">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

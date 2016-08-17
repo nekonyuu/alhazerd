@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block banner %}
+    <div id="banner">
+        <img src="{{ STATIC_URL }}css/images/banner.jpg" />
+    </div>
+{% endblock %}
+    
+{% block content %}
+    {% if isUserLoggedIn %}
+        <form id="upload_image" action="/send/" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="file" class="forms" name="sentImage" /><br />
+            <input type="submit" class="forms" id="send" name="submit" value="Send" />
+        </form>
+    {% else %}
+        <p>You have to be authenticated to upload something !</p>
+    {% endif %}
+{% endblock %}

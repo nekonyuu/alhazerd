@@ -1,0 +1,1 @@
+/etc/alhazerd/settings.py

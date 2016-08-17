@@ -1,0 +1,10 @@
+#!/bin/bash
+# Create system user with read rights to /var/log files and no shell access
+
+useradd -r -m -s /bin/false -g www-data alhazerd
+chown -R alhazerd /etc/alhazerd
+chmod -R 775 /etc/alhazerd
+insserv alhazerd
+
+exit 0
+

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div id="picture">
+        <table id="tablepict">
+            <tr>
+                <td id="fullpict">
+                    <a href="{{ MEDIA_URL }}{{ imagePath }}"><img src="{{ MEDIA_URL }}{{ imagePath }}" /></a>
+                </td>
+                <td id="links">
+                    <p>Direct Link : <input class="forms" type="text" onClick="this.focus();this.select();" value="{{ MEDIA_URL }}{{ imagePath }}"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

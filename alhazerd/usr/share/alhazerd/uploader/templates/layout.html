@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{% block title %}Alhazerd Uploader{% endblock %}</title>
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" media="screen" />
+</head>
+<body>
+    <div id="header">
+        <p class="left"><a href="/">Alhazerd Uploader</a></p>
+        {% if isUserLoggedIn %}
+        <p class="right">User : {{ username }} - <a href="/user/{{ username }}">Gallery</a> - <a href="/logoff/">Logoff</a></p>
+        {% else %}
+        <form id="login" action="/logon/" method="post" class="right">
+            {% csrf_token %}
+            <input type="text" class="forms" name="username" onClick="this.value=''" value="login"/>
+            <input type="password" class="forms" name="password" onClick="this.value=''" value="password" />
+            <input type="submit" class="forms" id="logon" name="submit" value="Logon" />
+        </form>
+        {% endif %}
+    </div>
+    
+    {% block banner %}{% endblock %}
+    
+    <div id="content">
+    {% block content %}{% endblock %}    
+    </div>
+    
+    <div id="footer">
+    
+    </div>
+</body>
+</html>
